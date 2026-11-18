@@ -5,9 +5,9 @@
 <style>
 /* Layout: herramienta de una columna; el resultado es un recorrido en dos tramos (llevar a 22 mm → armado común) */
 :root{
-  /* Rojo Drago (#E52A36) como color de marca; neutros cálidos */
+  /* Rojo Drago (#BC1313, del logo) como color de marca; neutros cálidos */
   --bg:#f7f5f5; --surface:#ffffff; --surface-2:#f0ecec; --fg:#1f1a1b; --muted:#675e60; --line:#e2dbdc;
-  --accent:#c8202b; --accent-fg:#ffffff; --brass:#b3202a; --brass-soft:#fbe4e6; --brand:#e52a36;
+  --accent:#bc1313; --accent-fg:#ffffff; --brass:#a81111; --brass-soft:#fbe3e3; --brand:#bc1313;
   --ok:#1f7a45; --ok-soft:#dcefe3; --warn:#93570a; --warn-soft:#f8ead2; --bad:#8f1d24; --bad-soft:#f6dedc;
   --photo:#ffffff;
   --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
@@ -17,11 +17,11 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#171314; --surface:#211b1c; --surface-2:#2b2425; --fg:#f3eeee; --muted:#b5aaac; --line:#3d3335;
-  --accent:#ff6b74; --accent-fg:#2a0507; --brass:#ff8d94; --brass-soft:#3f1c1f; --brand:#e52a36;
+  --accent:#ff6b6b; --accent-fg:#2a0505; --brass:#ff8f8f; --brass-soft:#3f1b1b; --brand:#bc1313;
   --ok:#6fcf97; --ok-soft:#173727; --warn:#f0b65a; --warn-soft:#3b2c12; --bad:#f08a80; --bad-soft:#3d1b19; --photo:#f4f6f6; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#171314; --surface:#211b1c; --surface-2:#2b2425; --fg:#f3eeee; --muted:#b5aaac; --line:#3d3335;
-  --accent:#ff6b74; --accent-fg:#2a0507; --brass:#ff8d94; --brass-soft:#3f1c1f; --brand:#e52a36;
+  --accent:#ff6b6b; --accent-fg:#2a0505; --brass:#ff8f8f; --brass-soft:#3f1b1b; --brand:#bc1313;
   --ok:#6fcf97; --ok-soft:#173727; --warn:#f0b65a; --warn-soft:#3b2c12; --bad:#f08a80; --bad-soft:#3d1b19; --photo:#f4f6f6; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -111,7 +111,7 @@ figure.photo.llave-mini{max-width:180px;margin-top:8px}
 @media (max-width:640px){.medir-grid{grid-template-columns:1fr}}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .topbar .marca{font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:.04em;color:var(--brand);text-decoration:none;display:inline-flex;align-items:center}
-.topbar .marca img{height:48px;width:48px;display:block}
+.topbar .marca img{height:49px;width:auto;display:block}
 .topbar .volver{font-weight:600;color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--surface)}
 .tienda-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
 .purga{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
@@ -153,7 +153,7 @@ footer{font-size:13px;color:var(--muted)}
 </style>
 
 <div class="wrap">
-  <div class="topbar"><a class="marca js-tienda" href="https://www.sodadrago.com.ar/">DRAGO</a><a class="volver js-purificadores" href="https://www.sodadrago.com.ar/purificadores/">← Volver a purificadores</a></div>
+  <div class="topbar"><a class="marca js-tienda" href="https://www.sodadrago.com.ar/" aria-label="Drago, ir a la tienda"><img src="fotos/logo-drago.png" alt="Drago" width="62" height="49"></a><a class="volver js-purificadores" href="https://www.sodadrago.com.ar/purificadores/">← Volver a purificadores</a></div>
   <header>
     <span class="eyebrow">Purificadores Drago · MP40 · MP70 · MP90</span>
     <h1>¿Qué adaptador necesita tu canilla?</h1>
