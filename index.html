@@ -108,6 +108,10 @@ figure.photo.llave-mini{max-width:180px;margin-top:8px}
 @media (max-width:640px){.alt-col{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:16px}}
 .medir-grid{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:16px;align-items:start}
 @media (max-width:640px){.medir-grid{grid-template-columns:1fr}}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.topbar .marca{font-family:var(--f-display);font-weight:700;font-size:20px;letter-spacing:.04em;color:var(--fg);text-decoration:none}
+.topbar .volver{font-weight:600;color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--surface)}
+.tienda-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
 .purga{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .purga div{border:1px solid var(--line);border-radius:8px;padding:8px 10px}
 .purga b{display:block;font-family:var(--f-mono);font-size:18px}
@@ -147,6 +151,7 @@ footer{font-size:13px;color:var(--muted)}
 </style>
 
 <div class="wrap">
+  <div class="topbar"><a class="marca js-tienda" href="https://www.sodadrago.com.ar/">DRAGO</a><a class="volver js-purificadores" href="https://www.sodadrago.com.ar/purificadores/">← Volver a purificadores</a></div>
   <header>
     <span class="eyebrow">Purificadores Drago · MP40 · MP70 · MP90</span>
     <h1>¿Qué adaptador necesita tu canilla?</h1>
@@ -250,6 +255,7 @@ footer{font-size:13px;color:var(--muted)}
     </div>
   </section>
 
+  <div class="tienda-cta"><div><b>¿Todavía no tenés tu purificador?</b><div class="muted small">Ya sabés qué adaptador va: elegí el modelo que mejor te sirve.</div></div><a class="btn js-purificadores" href="https://www.sodadrago.com.ar/purificadores/">Ver purificadores en la tienda</a></div>
   <footer>¿Dudas con tu canilla? Escribinos a <span class="mono" style="user-select:all">info@drago.com.ar</span> con una foto de la punta.</footer>
 </div>
 
@@ -508,7 +514,8 @@ footer{font-size:13px;color:var(--muted)}
     $("#glosList").innerHTML = gs.length ? gs.map(g=>`<dt>${esc(g.termino)}</dt><dd>${esc(g.definicion)}</dd>`).join("") : `<dd class="muted">${S.loaded?"Sin entradas cargadas.":"Cargando…"}</dd>`;
   }
 
-  function renderAll(){ $("#tab-marcas").hidden = !marcasOn(); if(!marcasOn() && !$("#view-marcas").hidden) show("buscar"); renderChips(); renderResult(); renderTipoFilters(); renderMarcas(); renderPierde(); renderPiezas(); renderGlosario(); renderEditor(); }
+  function renderLinks(){ const c=(S.contenido.find(x=>x.id==="config")||{}); document.querySelectorAll(".js-purificadores").forEach(a=>{ if(c.url_purificadores) a.href=c.url_purificadores; }); document.querySelectorAll(".js-tienda").forEach(a=>{ if(c.url_tienda) a.href=c.url_tienda; }); }
+  function renderAll(){ renderLinks(); $("#tab-marcas").hidden = !marcasOn(); if(!marcasOn() && !$("#view-marcas").hidden) show("buscar"); renderChips(); renderResult(); renderTipoFilters(); renderMarcas(); renderPierde(); renderPiezas(); renderGlosario(); renderEditor(); }
   renderAll();
 
   /* datos */
