@@ -5,9 +5,10 @@
 <style>
 /* Layout: herramienta de una columna; el resultado es un recorrido en dos tramos (llevar a 22 mm → armado común) */
 :root{
-  --bg:#f3f6f7; --surface:#ffffff; --surface-2:#e8eef0; --fg:#14262c; --muted:#56696f; --line:#cdd9dc;
-  --accent:#0d6b7c; --accent-fg:#ffffff; --brass:#a8711f; --brass-soft:#f4e7d1;
-  --ok:#1f7a45; --ok-soft:#dcefe3; --warn:#93570a; --warn-soft:#f8ead2; --bad:#a3312b; --bad-soft:#f6dedc;
+  /* Rojo Drago (#E52A36) como color de marca; neutros cálidos */
+  --bg:#f7f5f5; --surface:#ffffff; --surface-2:#f0ecec; --fg:#1f1a1b; --muted:#675e60; --line:#e2dbdc;
+  --accent:#c8202b; --accent-fg:#ffffff; --brass:#b3202a; --brass-soft:#fbe4e6; --brand:#e52a36;
+  --ok:#1f7a45; --ok-soft:#dcefe3; --warn:#93570a; --warn-soft:#f8ead2; --bad:#8f1d24; --bad-soft:#f6dedc;
   --photo:#ffffff;
   --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
   --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -15,12 +16,12 @@
   --r:10px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0e1a1e; --surface:#15252a; --surface-2:#1c3036; --fg:#e4eef0; --muted:#94aab0; --line:#2b434a;
-  --accent:#4fb6c7; --accent-fg:#06262c; --brass:#e0ac5a; --brass-soft:#3a2d18;
+  --bg:#171314; --surface:#211b1c; --surface-2:#2b2425; --fg:#f3eeee; --muted:#b5aaac; --line:#3d3335;
+  --accent:#ff6b74; --accent-fg:#2a0507; --brass:#ff8d94; --brass-soft:#3f1c1f; --brand:#e52a36;
   --ok:#6fcf97; --ok-soft:#173727; --warn:#f0b65a; --warn-soft:#3b2c12; --bad:#f08a80; --bad-soft:#3d1b19; --photo:#f4f6f6; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0e1a1e; --surface:#15252a; --surface-2:#1c3036; --fg:#e4eef0; --muted:#94aab0; --line:#2b434a;
-  --accent:#4fb6c7; --accent-fg:#06262c; --brass:#e0ac5a; --brass-soft:#3a2d18;
+  --bg:#171314; --surface:#211b1c; --surface-2:#2b2425; --fg:#f3eeee; --muted:#b5aaac; --line:#3d3335;
+  --accent:#ff6b74; --accent-fg:#2a0507; --brass:#ff8d94; --brass-soft:#3f1c1f; --brand:#e52a36;
   --ok:#6fcf97; --ok-soft:#173727; --warn:#f0b65a; --warn-soft:#3b2c12; --bad:#f08a80; --bad-soft:#3d1b19; --photo:#f4f6f6; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -109,7 +110,8 @@ figure.photo.llave-mini{max-width:180px;margin-top:8px}
 .medir-grid{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:16px;align-items:start}
 @media (max-width:640px){.medir-grid{grid-template-columns:1fr}}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.topbar .marca{font-family:var(--f-display);font-weight:700;font-size:20px;letter-spacing:.04em;color:var(--fg);text-decoration:none}
+.topbar .marca{font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:.04em;color:var(--brand);text-decoration:none;display:inline-flex;align-items:center}
+.topbar .marca img{height:48px;width:48px;display:block}
 .topbar .volver{font-weight:600;color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--surface)}
 .tienda-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
 .purga{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
